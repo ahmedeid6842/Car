@@ -1,6 +1,7 @@
-import { BadRequestException, Injectable } from "@nestjs/common";
+import { BadRequestException, Injectable, NotFoundException } from "@nestjs/common";
 import { UsersService } from "./users.service";
 import bcrypt from "bcrypt"
+import { User } from "./users.entity";
 @Injectable()
 export class AuthService {
     constructor(private userService: UsersService) { }
@@ -16,6 +17,21 @@ export class AuthService {
         password = await bcrypt.hash(password, salt);
 
         const user = await this.userService.create(email, password);
+
+        return user;
+    }
+
+    async signin(email: string, password: string) {
+        const [user] = await this.userService.find(email)
+
+        if (!user) {
+            throw new NotFoundException("user not found");
+        }
+
+        const verifiedUser = await bcrypt.compare(password, user.password)
+        if (!verifiedUser) {
+            throw new BadRequestException('incorrect password')
+        }
 
         return user;
     }
