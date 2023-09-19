@@ -5,6 +5,6 @@ export const CurrentUser = createParamDecorator(
     //  context of type ExuctionContenct to be suitable for any type of connection http or websocket ... etc
     (data: never, context: ExecutionContext) => {
         const request = context.switchToHttp().getRequest(); // convert the context of incoming request to http to  can extract the session id
-        return request.session.userId;
+        return request.currentUser;
     }
 )
