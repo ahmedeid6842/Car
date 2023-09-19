@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable, NotFoundException } from "@nestjs/common";
 import { UsersService } from "./users.service";
-import bcrypt from "bcrypt"
+import * as bcrypt from "bcrypt"
 import { User } from "./users.entity";
 @Injectable()
 export class AuthService {
@@ -13,7 +13,7 @@ export class AuthService {
             throw new BadRequestException(`this email:${email} is already exists`)
         }
 
-        const salt = await bcrypt.genSalt(10);
+        const salt = await bcrypt.genSalt();
         password = await bcrypt.hash(password, salt);
 
         const user = await this.userService.create(email, password);
