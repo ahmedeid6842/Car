@@ -5,7 +5,7 @@ import { User } from './users.entity';
 
 @Injectable()
 export class UsersService {
-  constructor(@InjectRepository(User) private userRepo: Repository<User>) {}
+  constructor(@InjectRepository(User) private userRepo: Repository<User>) { }
 
   create(email: string, password: string) {
     const user = this.userRepo.create({ email, password });
@@ -14,6 +14,9 @@ export class UsersService {
   }
 
   findOne(id: number) {
+    if (!id) {
+      return null;
+    }
     return this.userRepo.findOne({ where: { id } });
   }
 
