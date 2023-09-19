@@ -4,8 +4,8 @@ import {
     NestInterceptor, UseInterceptors
 } from '@nestjs/common';
 import { UsersService } from '../users.service';
-import { Observable } from 'rxjs';
 
+// this interceptor is the link between our DI system and decorators or in other word link between CurrentUser decortator and User service
 export class CurrentUserInterceptor implements NestInterceptor {
     constructor(private userService: UsersService) { };
     async intercept(context: ExecutionContext, next: CallHandler) {
