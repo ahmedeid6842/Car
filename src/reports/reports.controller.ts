@@ -20,7 +20,7 @@ export class ReportsController {
         return this.reportService.create(body, user)
     }
 
-    @Patch(":/id")
+    @Patch("/:id")
     @UseGuards(AdminGuard)
     approveReport(@Param("id") id: string, @Body() body: ApproveReportDto) {
         return this.reportService.changeApproval(id, body.approved)
