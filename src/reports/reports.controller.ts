@@ -8,7 +8,7 @@ import { ReportsService } from './reports.service';
 export class ReportsController {
     constructor(private reportService: ReportsService) { }
     @Post()
-    createReport(@Body() body: CreateReportDto, @CurrentUser() user: User) {
+    createReport(@Body() body: CreateReportDto, /*@CurrentUser() user: User*/) {
         return this.reportService.create(body)
     }
 }
