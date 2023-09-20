@@ -15,7 +15,7 @@ export class Report {
   model: string;
 
   @Column()
-  year: string;
+  year: number;
 
   @Column()
   lng: number;
