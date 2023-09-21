@@ -28,7 +28,7 @@ Welcome to Car, a Nest.js project that aims to provide accurate pricing informat
 </p>
 
 <p>
-The main goal of this project is to help users determine the fair market value of used cars by considering various factors such as make, model, mileage, condition, and location. By using sophisticated algorithms and data analysis techniques, the application provides reliable pricing estimates that can assist car buyers, sellers, and enthusiasts in making informed decisions.
+The main goal of this project is to help users determine the fair market value of used cars by considering various factors such as make, model, mileage, condition, and location. By using Admin approval for the reports and estimate report querie, the application provides reliable pricing estimates that can assist car buyers, sellers, and enthusiasts in making informed decisions.
 </p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
