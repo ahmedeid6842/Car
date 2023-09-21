@@ -87,7 +87,7 @@ The application will be accessible at http://localhost:3000.
 
 > The API reference provides detailed documentation on the available endpoints, request/response formats, and authentication requirements. 
 
-![10-10 - routes drawio (1)](https://github.com/ahmedeid6842/car/assets/57197702/1ef5cfaa-55b8-4afe-886f-a4605e18b6de)
+![10-10 - routes drawio (1)](https://github.com/ahmedeid6842/Car/assets/57197702/c4b976b2-fd38-4bf4-ba51-440d7188bc80)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
